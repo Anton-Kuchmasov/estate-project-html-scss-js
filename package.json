@@ -1,0 +1,27 @@
+{
+  "name": "capstone-learning-platform",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass src/styles/main.scss public/styles/main.css",
+    "lint:js": "eslint ./src/**/*/*.js",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint": "npm run lint:js && npm rum lint:scss",
+    "start": "npm run compile && parcel src/index.html",
+    "prepare": "husky"
+  },
+  "author": "Anton Kuchmasov",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "@parcel/transformer-sass": "^2.14.2",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "parcel": "^2.14.2",
+    "sass": "^1.86.0",
+    "stylelint-config-standard-scss": "^14.0.0"
+  }
+}
