@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/main.scss">
-    <title>Educational platform</title>
-</head>
-<body>
-    <h1 class="header">Online Learning Platform</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>EstatePro</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <header class="header">
+        <nav class="nav">
+          <div class="nav__logo">
+            <img
+              src="/public/images/icons/logo-nav.svg"
+              alt="EstatePro Logo"
+              class="nav__logo--icon"
+            />
+            <span class="nav__logo--label">EstatePro</span>
+          </div>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Properties</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Agents</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Blog</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="header__button">
+          <div class="header__button--content">
+            <span>Get Started</span>
+            <img src="/public/images/icons/arrow-right.svg" alt="Get Started" />
+          </div>
+        </button>
+      </header>
+      <main class="main">
+        <div class="hero hero__content"></div>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
 </html>

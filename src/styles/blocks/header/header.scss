@@ -1,0 +1,84 @@
+@use "./../../utils/vars.scss" as *;
+@use "./../../utils/mixins.scss" as mixins;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-height: 40px;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+    place-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    &--icon {
+      height: 40px;
+      width: 40px;
+    }
+
+    &--label {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: 0;
+      color: #fff;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+  }
+
+  &__link {
+    @include mixins.hover-transition(color);
+
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    color: rgba($color: #fff, $alpha: 60%);
+    text-decoration: none;
+
+    &:hover {
+      color: rgba($color: #fff, $alpha: 100%);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 32px;
+  background-color: $bgc-hero;
+  color: #fff;
+
+  &__button {
+    padding: 20px 24px;
+    height: 58px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    cursor: pointer;
+
+    @include mixins.hover-transition(background-color);
+
+    &:hover {
+        background-color: rgb(233 205 150);
+    }
+
+    &--content {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

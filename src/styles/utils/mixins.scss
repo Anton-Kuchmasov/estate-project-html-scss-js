@@ -1,0 +1,7 @@
+@mixin hover-transition($props: all) {
+    transition: $props 0.3s ease;
+  }
+
+@mixin page-padding {
+    padding-inline: 100px;
+}

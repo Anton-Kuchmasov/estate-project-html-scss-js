@@ -1,11 +1,8 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: lightgray;
-}
+@use './utils/normalize.scss' as *;
+@use './utils/fonts.scss' as *;
+@use './utils/mixins.scss' as mixins;
+@use './blocks/header/header.scss' as *;
 
-.header {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 24px;
-  color: orangered;
+.page-container > * {
+    @include mixins.page-padding;
 }

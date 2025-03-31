@@ -1,0 +1,10 @@
+$font-poppins: 'Poppins', sans-serif;
+
+* {
+  font-family: $font-poppins;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
