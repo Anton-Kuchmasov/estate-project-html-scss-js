@@ -6,6 +6,7 @@
   justify-content: space-between;
   gap: 40px;
   max-height: 40px;
+  width: 100%;
   align-items: center;
 
   &__logo {
@@ -24,7 +25,7 @@
       font-weight: 700;
       line-height: 32px;
       letter-spacing: 0;
-      color: #fff;
+      color: $primary-white;
     }
   }
 
@@ -41,44 +42,127 @@
     height: 40px;
     line-height: 40px;
     font-weight: 400;
-    color: rgba($color: #fff, $alpha: 60%);
+    color: $secondary-white-shadow;
     text-decoration: none;
 
     &:hover {
-      color: rgba($color: #fff, $alpha: 100%);
+      color: rgba($color: $primary-white, $alpha: 100%);
     }
   }
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
+  min-height: 100vh;
   align-items: center;
   padding-block: 32px;
   background-color: $bgc-hero;
-  color: #fff;
+  color: $primary-white;
 
   &__button {
-    padding: 20px 24px;
-    height: 58px;
-    border-radius: 12px;
-    border: none;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 700;
-    cursor: pointer;
-
-    @include mixins.hover-transition(background-color);
-
-    &:hover {
-        background-color: rgb(233 205 150);
-    }
+    @include mixins.primary-button($primary-black, $primary-white, 16px);
+    @include mixins.button-hover(
+      rgba($color: $primary-orange, $alpha: 90%),
+      $primary-black
+    );
 
     &--content {
       display: flex;
       gap: 4px;
       align-items: center;
       justify-content: center;
+    }
+  }
+}
+
+.hero {
+  background-color: inherit;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  &__content {
+    padding-top: 98px;
+  }
+
+  &__header {
+    grid-column: 1 / 6;
+    justify-items: start;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 130%;
+    letter-spacing: 0;
+    text-transform: capitalize;
+
+    &--ending {
+      font-weight: inherit;
+      color: $primary-orange;
+    }
+  }
+
+  &__description {
+    grid-column: 8 / 13;
+    display: block;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 180%;
+    text-transform: capitalize;
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    @include mixins.primary-button($primary-white, $primary-orange, 16px);
+    @include mixins.button-hover(
+      rgba($color: $primary-orange, $alpha: 70%),
+      $primary-white
+    );
+
+    margin-bottom: 32px;
+  }
+
+  &__stats {
+    margin-bottom: 68px;
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    background: url("/public/images/photos/hero__image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    height: 465px;
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    position: relative;
+    cursor: pointer;
+
+    @include mixins.hover-underline(12px, $primary-white);
+
+    &--number {
+      font-size: 28px;
+
+      &::after {
+        content: "+";
+        color: $primary-orange;
+      }
+    }
+
+    &--text {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: $secondary-white-shadow;
     }
   }
 }

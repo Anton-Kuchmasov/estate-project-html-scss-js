@@ -1,0 +1,87 @@
+@use "./../../utils/mixins.scss" as mixins;
+@use "./../../utils/vars.scss" as *;
+
+.footer {
+  background-color: $primary-black;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-block: 80px;
+  }
+
+  &__logo {
+    display: flex;
+    place-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    &--icon {
+      height: 40px;
+      width: 40px;
+    }
+
+    &--label {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: 0;
+      color: $primary-white;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: 1 / 4;
+
+    &--text {
+      @include mixins.hover-transition(color);
+      
+      color: $secondary-white-shadow;
+      cursor: pointer;
+
+      &:hover {
+        color: rgba($color: $primary-white, $alpha: 100%);
+      }
+    }
+  }
+
+  &__right {
+    grid-column: 9 / -1;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+    &--header {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 22px;
+      margin-bottom: 40px;
+      color: $primary-white;
+    }
+
+    &--list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &--link {
+      @include mixins.hover-transition(color);
+
+      color: $secondary-white-shadow;
+      cursor: pointer;
+      line-height: 16px;
+
+      &:hover {
+        color: rgba($color: $primary-white, $alpha: 100%);
+      }
+    }
+  }
+}

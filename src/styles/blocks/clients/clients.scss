@@ -1,0 +1,92 @@
+@use "./../../utils/mixins.scss" as mixins;
+@use "./../../utils/vars.scss" as *;
+
+.clients {
+    @include mixins.page-padding;
+    
+    padding-block: 120px;
+
+    &__header {
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 100%;
+    }
+
+    &__photo {
+        border-radius: 12px;
+        max-width: 80%;
+    }
+    
+    &__photo-wrapper {
+        position: relative;
+        margin-top: 50px;
+        padding: 0;
+    }
+
+    &__feedback {
+        position: absolute;
+        right: 0;
+        bottom: 25%;
+        transform: translateX(-50%);
+        max-width: 40%;
+        padding: 48px;
+        background-color: $primary-white;
+        border: 1px solid $secondary-gray-border;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &--header {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 100%;
+        }
+
+        &--text {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 180%;
+        }
+    }
+}
+
+.feedback {
+    &__container {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            
+
+            &--delimiter {
+                display: block;
+                width: 32px;
+                background-color: $secondary-gray-border;
+                height: 2px;
+            }
+
+            &--name {
+                font-weight: 600;
+                position: relative;
+                cursor: pointer;
+            
+                @include mixins.hover-underline(4px, $primary-black);
+            }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        max-width: 206px;
+        margin-inline: auto;
+        margin-top: 60px;
+        text-transform: capitalize;
+        
+        @include mixins.primary-button($primary-white, $primary-orange, 16px);
+        @include mixins.button-hover(
+            rgba($color: red, $alpha: 90%),
+            $primary-white
+          );
+    }
+}

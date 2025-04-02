@@ -1,0 +1,25 @@
+@use "./../../utils/mixins.scss" as mixins;
+@use "./../../utils/vars.scss" as *;
+
+.trusted {
+  background-color: inherit;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    color: $secondary-text-black;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 64px;
+  }
+}

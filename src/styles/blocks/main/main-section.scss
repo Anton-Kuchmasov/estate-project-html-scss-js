@@ -1,0 +1,20 @@
+@use "./../../utils/mixins.scss" as mixins;
+@use "./../../utils/vars.scss" as *;
+
+.main {
+  background-color: $primary-white;
+  min-height: 100vh;
+
+  &__trusted {
+    border-bottom: 1px solid rgba($color: $secondary-text-black, $alpha: 30%);
+    height: 178px;
+  }
+
+  &__clients {
+    min-height: 100vh;
+    background-image: url("/public/images/backgrounds/client-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-inline: -100px;
+  }
+}

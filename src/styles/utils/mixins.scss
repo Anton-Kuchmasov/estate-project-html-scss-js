@@ -5,3 +5,46 @@
 @mixin page-padding {
     padding-inline: 100px;
 }
+
+@mixin primary-button($color, $background-color, $font-size) {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    font-size: $font-size;
+    color: $color;
+    background-color: $background-color;
+    line-height: 125%;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin button-hover($hovercolor, $color) {
+    @include hover-transition;
+
+    &:hover {
+        background-color: $hovercolor;
+        color: $color;
+    }
+}
+
+@mixin hover-underline($padding-bottom, $color) {
+    padding-bottom: $padding-bottom;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+    }
+}
