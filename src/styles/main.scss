@@ -7,7 +7,12 @@
 @use './blocks/clients/clients.scss' as *;
 @use './blocks/trusted/trusted.scss' as *;
 @use './blocks/footer/footer.scss' as *;
+@use './blocks/menu/menu.scss' as *;
 
 .page-container > * {
     @include mixins.page-padding;
+}
+
+body:has(#menu:target) {
+    overflow: hidden;
 }

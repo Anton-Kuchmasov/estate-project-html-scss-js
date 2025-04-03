@@ -82,6 +82,26 @@
   background-color: $bgc-hero;
   color: $primary-white;
 
+  &__menu {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 32px;
+    transform: translateX(-100%);
+    background-color: $primary-orange;
+    pointer-events: none;
+
+    @include mixins.page-padding;
+    @include mixins.hover-transition;
+
+    &:target {
+        transform: translateX(0);
+        pointer-events: all;
+    }    
+  }
+
   &__button {
     @include mixins.primary-button($primary-black, $primary-white, 16px);
     @include mixins.button-hover(
@@ -112,7 +132,7 @@
     padding-top: 48px;
 
     @include mixins.on-tablet {
-        padding-top: 98px;
+      padding-top: 98px;
     }
   }
 
@@ -127,8 +147,8 @@
     margin-bottom: 26px;
 
     @include mixins.on-tablet {
-        margin-bottom: 0;
-        font-size: 70px;
+      margin-bottom: 0;
+      font-size: 70px;
     }
 
     &--ending {
@@ -152,7 +172,7 @@
     margin-bottom: 24px;
 
     @include mixins.on-tablet {
-        font-size: 22px;
+      font-size: 22px;
     }
   }
 
@@ -228,3 +248,5 @@
     }
   }
 }
+
+

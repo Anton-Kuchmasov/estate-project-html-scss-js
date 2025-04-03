@@ -1,0 +1,85 @@
+@use "./../../utils/vars.scss" as *;
+@use "./../../utils/mixins.scss" as mixins;
+
+.menu {
+    display: block;
+    z-index: 3;
+
+    @include mixins.on-tablet {
+        display: none;
+    }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--close {
+      display: flex;
+      height: 30px;
+      width: 30px;
+      background-image: url("/public/images/icons/icon-close-2x.png");
+      background-size: contain;
+    }
+
+    &--label {
+        margin-left: 30px;
+        font-size: 28px;
+        font-weight: 700;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 40px;
+    margin-left: 30px;
+    margin-top: 80px;
+
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    line-height: 46px;
+    font-weight: 500;
+    font-size: 28px;
+    color: $primary-white;
+    text-decoration: none;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        transform-origin: left;
+
+        @keyframes underline {
+            0% {
+                transform: scaleX(0);
+            }
+
+            50% {
+                transform: scaleX(1);
+            }
+
+            100% {
+                transform: scaleX(0);
+            }
+            
+        }
+
+        animation: underline 2s infinite;
+
+    }
+
+    &:hover {
+      color: rgba($color: $primary-white, $alpha: 100%);
+    }
+  }
+}
