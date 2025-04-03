@@ -5,12 +5,22 @@
   min-height: 100vh;
   background-color: $primary-white;
   padding-top: 100px;
-  padding-bottom: 320px;
+  padding-bottom: 80px;
+
+  @include mixins.on-tablet {
+    padding-bottom: 320px;
+  }
+
+  overflow-x: hidden;
 
   &__header {
-    font-size: 50px;
+    font-size: 28px;
     font-weight: 600;
     line-height: 125%;
+
+    @include mixins.on-tablet {
+      font-size: 50px;
+    }
   }
 
   &__top {
@@ -26,9 +36,12 @@
 
     &--link {
       display: flex;
+      align-items: center;
       gap: 16px;
-      
-      @include mixins.hover-underline(8px, $primary-black);
+
+      @include mixins.on-tablet {
+        @include mixins.hover-underline(8px, $primary-black);
+      }
     }
 
     &--text {
@@ -38,17 +51,29 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 80px 120px;
     align-items: start;
+
+    @include mixins.on-tablet {
+      grid-template-columns: repeat(12, 1fr);
+    }
   }
 
   &__card {
-    grid-column: 1 / 7;
+    grid-column: 1 / -1;
+
+    @include mixins.on-tablet {
+      grid-column: 1 / 7;
+    }
 
     &:nth-child(even) {
-      grid-column: 7 / -1;
-      transform: translateY(200px);
+      grid-column: 1 / -1;
+
+      @include mixins.on-tablet {
+        grid-column: 7 / -1;
+        transform: translateY(200px);
+      }
     }
   }
 }
@@ -56,17 +81,22 @@
 .card {
   &__container {
     display: flex;
+    max-width: calc(100vw - 50px);
     flex-direction: column;
     padding: 16px;
     border: 1px solid rgba($color: $secondary-text-black, $alpha: 20%);
     border-radius: 20px;
     cursor: pointer;
-    
-    @include mixins.hover-transition;
 
-    &:hover {
-      transform: scale(1.03);
+    @include mixins.on-tablet {
+      max-width: auto;
+
+      &:hover {
+        transform: scale(1.03);
+      }
     }
+
+    @include mixins.hover-transition;
   }
 
   &__delimiter {
@@ -78,18 +108,26 @@
   }
 
   &__price {
-    font-size: 30px;
+    font-size: 20px;
     line-height: 100%;
     font-weight: 600;
     margin-top: 28px;
+
+    @include mixins.on-tablet {
+      font-size: 30px;
+    }
   }
 
   &__description {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     margin-top: 16px;
     padding-bottom: 18px;
     border-bottom: 1px solid rgba($color: $secondary-text-black, $alpha: 30%);
+
+    @include mixins.on-tablet {
+      font-size: 24px;
+    }
   }
 
   &__props {

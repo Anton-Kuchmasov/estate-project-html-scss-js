@@ -5,9 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "sass src/styles/main.scss public/styles/main.css",
-    "lint:js": "eslint ./src/**/*/*.js",
-    "lint:scss": "npx stylelint \"**/*.scss\"",
-    "lint": "npm run lint:js && npm rum lint:scss",
+    "lint:js": "eslint ./src/**/*/*.js --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\" --fix",
+    "lint": "npm run lint:js && npm run lint:scss",
     "start": "npm run compile && parcel src/index.html",
     "prepare": "husky"
   },

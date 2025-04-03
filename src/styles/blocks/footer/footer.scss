@@ -3,11 +3,17 @@
 
 .footer {
   background-color: $primary-black;
+  overflow-x: hidden;
 
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    padding-block: 80px;
+    padding-block: 48px;
+    overflow-x: hidden;
+
+    @include mixins.on-tablet {
+        padding-block: 80px;
+    }
   }
 
   &__logo {
@@ -33,12 +39,17 @@
   &__left {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    grid-column: 1 / 4;
+    gap: 24px;
+    grid-column: 1 / -1;
+
+    @include mixins.on-tablet {
+        gap: 12px;
+      grid-column: 1 / 4;
+    }
 
     &--text {
       @include mixins.hover-transition(color);
-      
+
       color: $secondary-white-shadow;
       cursor: pointer;
 
@@ -49,20 +60,34 @@
   }
 
   &__right {
-    grid-column: 9 / -1;
+    grid-column: 1 / -1;
+    margin-top: 64px;
+
+    @include mixins.on-tablet {
+      grid-column: 9 / -1;
+      margin-top: 0;
+    }
   }
 
   &__nav {
     display: flex;
-    flex-direction: row;
-    gap: 100px;
+    flex-direction: column;
+    gap: 60px;
+
+    @include mixins.on-tablet {
+      gap: 100px;
+    }
 
     &--header {
       font-size: 20px;
       font-weight: 600;
       line-height: 22px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       color: $primary-white;
+
+      @include mixins.on-tablet {
+        margin-bottom: 40px;
+      }
     }
 
     &--list {

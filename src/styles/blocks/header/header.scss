@@ -29,16 +29,40 @@
     }
   }
 
+  &__bigscreen {
+    display: none;
+
+    @include mixins.on-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__burger {
+    display: flex;
+    height: 25px;
+    width: 30px;
+
+    @include mixins.on-tablet {
+      display: none;
+    }
+  }
+
   &__list {
     display: flex;
     list-style: none;
     gap: 40px;
+
+    @include mixins.on-tablet {
+      margin-right: 40px;
+    }
   }
 
   &__link {
     @include mixins.hover-transition(color);
 
-    display: inline-block;
+    display: flex;
     height: 40px;
     line-height: 40px;
     font-weight: 400;
@@ -76,21 +100,36 @@
 
 .hero {
   background-color: inherit;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: block;
+  overflow-x: hidden;
+
+  @include mixins.on-tablet {
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+  }
 
   &__content {
-    padding-top: 98px;
+    padding-top: 48px;
+
+    @include mixins.on-tablet {
+        padding-top: 98px;
+    }
   }
 
   &__header {
     grid-column: 1 / 6;
     justify-items: start;
     font-weight: 700;
-    font-size: 70px;
+    font-size: 50px;
     line-height: 130%;
     letter-spacing: 0;
     text-transform: capitalize;
+    margin-bottom: 26px;
+
+    @include mixins.on-tablet {
+        margin-bottom: 0;
+        font-size: 70px;
+    }
 
     &--ending {
       font-weight: inherit;
@@ -99,16 +138,22 @@
   }
 
   &__description {
-    grid-column: 8 / 13;
-    display: block;
+    @include mixins.on-tablet {
+      grid-column: 8 / 13;
+      display: block;
+    }
   }
 
   &__text {
     font-weight: 300;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 180%;
     text-transform: capitalize;
     margin-bottom: 24px;
+
+    @include mixins.on-tablet {
+        font-size: 22px;
+    }
   }
 
   &__button {
@@ -122,22 +167,37 @@
   }
 
   &__stats {
-    margin-bottom: 68px;
+    margin-bottom: 28px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 68px;
+    }
   }
 
   &__image {
-    grid-column: 1 / -1;
     background: url("/public/images/photos/hero__image.png");
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    height: 465px;
+    height: 250px;
+
+    @include mixins.on-tablet {
+      grid-column: 1 / -1;
+      height: 465px;
+    }
   }
 }
 
 .stats {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 26px;
+
+  @include mixins.on-tablet {
+    gap: 0;
+    flex-direction: row;
+  }
 
   &__item {
     display: flex;
@@ -148,7 +208,9 @@
     position: relative;
     cursor: pointer;
 
-    @include mixins.hover-underline(12px, $primary-white);
+    @include mixins.on-tablet {
+      @include mixins.hover-underline(12px, $primary-white);
+    }
 
     &--number {
       font-size: 28px;
