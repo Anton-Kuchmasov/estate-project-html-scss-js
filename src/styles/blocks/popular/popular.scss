@@ -8,6 +8,11 @@
   padding-bottom: 80px;
 
   @include mixins.on-tablet {
+    padding-bottom: 120px;
+  }
+
+  
+  @include mixins.on-desktop {
     padding-bottom: 320px;
   }
 
@@ -50,13 +55,24 @@
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 80px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     align-items: start;
+    padding-inline: 12px;
+    max-width: calc(100% - 20px);
 
     @include mixins.on-tablet {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 40px 40px;
+    }
+
+
+    @include mixins.on-desktop {
       grid-template-columns: repeat(12, 1fr);
+      gap: 80px 120px;
+
     }
   }
 
@@ -64,13 +80,21 @@
     grid-column: 1 / -1;
 
     @include mixins.on-tablet {
-      grid-column: 1 / 7;
+      grid-column: 1 / 5;
+    }
+
+    @include mixins.on-desktop {
+        grid-column: 1 / 7;
     }
 
     &:nth-child(even) {
       grid-column: 1 / -1;
 
       @include mixins.on-tablet {
+        grid-column: 5 / -1;
+      }
+
+      @include mixins.on-desktop {
         grid-column: 7 / -1;
         transform: translateY(200px);
       }
@@ -81,7 +105,7 @@
 .card {
   &__container {
     display: flex;
-    max-width: calc(100vw - 50px);
+    max-width: calc(100vw - 70px);
     flex-direction: column;
     padding: 16px;
     border: 1px solid rgba($color: $secondary-text-black, $alpha: 20%);
@@ -89,7 +113,7 @@
     cursor: pointer;
 
     @include mixins.on-tablet {
-      max-width: auto;
+      max-width: calc(100% - 20px);
 
       &:hover {
         transform: scale(1.03);

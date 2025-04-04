@@ -22,8 +22,13 @@
     margin-inline: -25px;
 
     @include mixins.on-tablet {
-      margin-inline: -100px;
-      min-height: 100vh;
+      margin-inline: -50px;
+      min-height: 50vh;
+    }
+
+    @include mixins.on-desktop {
+        margin-inline: -100px;
+        min-height: 100vh;
     }
   }
 }

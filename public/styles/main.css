@@ -121,10 +121,10 @@ h1, h2, h3 {
   width: 100vw;
   padding-top: 32px;
   transform: translateX(-100%);
-  transition: all 0.3s ease;
   background-color: #f15a29;
   pointer-events: none;
   padding-inline: 25px;
+  transition: all 0.3s ease;
 }
 @media (min-width: 576px) {
   .header__menu {
@@ -337,6 +337,12 @@ h1, h2, h3 {
 }
 @media (min-width: 576px) {
   .main__clients {
+    margin-inline: -50px;
+    min-height: 50vh;
+  }
+}
+@media (min-width: 1200px) {
+  .main__clients {
     margin-inline: -100px;
     min-height: 100vh;
   }
@@ -403,14 +409,21 @@ h1, h2, h3 {
   transition: all 0.3s ease;
 }
 .popular__container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 80px 120px;
+  display: flex;
+  flex-direction: column;
   align-items: start;
 }
 @media (min-width: 576px) {
   .popular__container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 40px 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .popular__container {
     grid-template-columns: repeat(12, 1fr);
+    gap: 80px 120px;
   }
 }
 .popular__card {
@@ -418,13 +431,18 @@ h1, h2, h3 {
 }
 @media (min-width: 576px) {
   .popular__card {
-    grid-column: 1/7;
+    grid-column: 1/5;
   }
 }
 .popular__card:nth-child(even) {
   grid-column: 1/-1;
 }
 @media (min-width: 576px) {
+  .popular__card:nth-child(even) {
+    grid-column: 5/-1;
+  }
+}
+@media (min-width: 1200px) {
   .popular__card:nth-child(even) {
     grid-column: 7/-1;
     transform: translateY(200px);
@@ -505,6 +523,7 @@ h1, h2, h3 {
 
 .clients {
   padding-inline: 25px;
+  max-width: 100vw;
   padding-block: 80px;
 }
 @media (min-width: 576px) {
@@ -532,30 +551,21 @@ h1, h2, h3 {
   .clients__header {
     text-align: left;
     font-size: 50px;
+    margin-left: 50px;
   }
 }
-.clients__photo {
-  border-radius: 12px;
-  max-width: 100%;
-  display: none;
-}
-@media (min-width: 576px) {
-  .clients__photo {
-    max-width: 80%;
-  }
-}
-.clients__photo-wrapper {
-  position: relative;
+.clients__wrapper {
+  display: flex;
+  justify-content: center;
   margin-top: 72px;
   padding: 0;
 }
 @media (min-width: 576px) {
-  .clients__photo-wrapper {
+  .clients__wrapper {
     margin-top: 50px;
   }
 }
 .clients__feedback {
-  position: static;
   max-width: calc(100vw - 40px);
   max-height: 388px;
   padding: 24px;
@@ -568,14 +578,14 @@ h1, h2, h3 {
 }
 @media (min-width: 576px) {
   .clients__feedback {
-    position: absolute;
-    transform: translateX(-50%);
-    max-height: auto;
-    padding: 48px;
-    gap: 32px;
-    max-width: 80%;
-    right: 0;
-    bottom: 25%;
+    max-width: 50vw;
+    margin-top: 48px;
+  }
+}
+@media (min-width: 1200px) {
+  .clients__feedback {
+    max-width: 100vw;
+    margin-top: 76px;
   }
 }
 .clients__feedback--header {
@@ -724,7 +734,7 @@ h1, h2, h3 {
 }
 @media (min-width: 576px) {
   .footer__left {
-    gap: 12px;
+    gap: 24px;
     grid-column: 1/4;
   }
 }
@@ -746,17 +756,23 @@ h1, h2, h3 {
     margin-top: 0;
   }
 }
-.footer__nav {
+@media (min-width: 576px) and (min-width: 1200px) {
+  .footer__right {
+    grid-column: 10/-1;
+  }
+}
+.footer__right__nav {
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
 @media (min-width: 576px) {
-  .footer__nav {
-    gap: 100px;
+  .footer__right__nav {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
-.footer__nav--header {
+.footer__right__nav--header {
   font-size: 20px;
   font-weight: 600;
   line-height: 22px;
@@ -764,26 +780,35 @@ h1, h2, h3 {
   color: #fff;
 }
 @media (min-width: 576px) {
-  .footer__nav--header {
+  .footer__right__nav--header {
     margin-bottom: 40px;
   }
 }
-.footer__nav--list {
+.footer__right__nav--list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.footer__nav--link {
+.footer__right__nav--link {
   transition: color 0.3s ease;
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   line-height: 16px;
 }
-.footer__nav--link:hover {
+.footer__right__nav--link:hover {
   color: white;
 }
 
+.menu {
+  display: block;
+  z-index: 3;
+}
+@media (min-width: 576px) {
+  .menu {
+    display: none;
+  }
+}
 .menu__top {
   display: flex;
   justify-content: space-between;
@@ -793,13 +818,56 @@ h1, h2, h3 {
   display: flex;
   height: 30px;
   width: 30px;
-  background-image: url(/public/images/icons/icon-close-2x.png);
+  background-image: url("/public/images/icons/icon-close-2x.png");
   background-size: contain;
 }
 .menu__top--label {
   margin-left: 30px;
   font-size: 28px;
   font-weight: 700;
+}
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 40px;
+  margin-left: 30px;
+  margin-top: 80px;
+}
+.menu__link {
+  position: relative;
+  display: inline-block;
+  height: 46px;
+  line-height: 46px;
+  font-weight: 500;
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+}
+.menu__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transform-origin: left;
+  animation: underline 2s infinite;
+}
+@keyframes underline {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+.menu__link:hover {
+  color: white;
 }
 
 .page-container > * {
@@ -814,6 +882,10 @@ h1, h2, h3 {
   .page-container > * {
     padding-inline: 100px;
   }
+}
+
+body:has(#menu:target) {
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

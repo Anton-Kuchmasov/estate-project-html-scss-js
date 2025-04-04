@@ -82,6 +82,10 @@
   background-color: $bgc-hero;
   color: $primary-white;
 
+  @include mixins.on-desktop {
+    padding-bottom: 64px;
+  }
+
   &__menu {
     position: fixed;
     bottom: 0;
@@ -97,9 +101,9 @@
     @include mixins.hover-transition;
 
     &:target {
-        transform: translateX(0);
-        pointer-events: all;
-    }    
+      transform: translateX(0);
+      pointer-events: all;
+    }
   }
 
   &__button {
@@ -108,6 +112,12 @@
       rgba($color: $primary-orange, $alpha: 90%),
       $primary-black
     );
+
+    display: none;
+
+    @include mixins.on-desktop {
+      display: flex;
+    }
 
     &--content {
       display: flex;
@@ -123,16 +133,17 @@
   display: block;
   overflow-x: hidden;
 
-  @include mixins.on-tablet {
+  @include mixins.on-desktop {
     grid-template-columns: repeat(12, 1fr);
     display: grid;
   }
 
   &__content {
     padding-top: 48px;
+    overflow-y: hidden;
 
     @include mixins.on-tablet {
-      padding-top: 98px;
+      padding-top: 68px;
     }
   }
 
@@ -147,8 +158,12 @@
     margin-bottom: 26px;
 
     @include mixins.on-tablet {
-      margin-bottom: 0;
+      margin-bottom: 48px;
       font-size: 70px;
+    }
+
+    @include mixins.on-desktop {
+      margin-bottom: 0;
     }
 
     &--ending {
@@ -173,6 +188,7 @@
 
     @include mixins.on-tablet {
       font-size: 22px;
+      margin-bottom: 32px;
     }
   }
 
@@ -190,7 +206,7 @@
     margin-bottom: 28px;
 
     @include mixins.on-tablet {
-      margin-bottom: 68px;
+      margin-bottom: 64px;
     }
   }
 
@@ -211,12 +227,17 @@
 .stats {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 26px;
 
   @include mixins.on-tablet {
-    gap: 0;
+    gap: 48px;
     flex-direction: row;
+  }
+
+  @include mixins.on-desktop {
+    gap: 0;
+    justify-content: space-between;
   }
 
   &__item {
@@ -248,5 +269,3 @@
     }
   }
 }
-
-
