@@ -12,7 +12,11 @@
 
       & .hero {
         &__text {
-          padding-inline: 120px;
+          padding-inline: 25px;
+
+          @include mixins.on-tablet {
+            padding-inline: 120px;
+          }
         }
 
         &__header {
@@ -34,7 +38,6 @@
           padding: 16px 32px;
           background-color: $primary-gray;
           border-radius: 12px;
-          
 
           & * {
             border-radius: 10px;
@@ -94,14 +97,14 @@
 
           &--reset {
             @include mixins.primary-button(
-                $primary-black,
-                $primary-white,
-                16px
-              );
-              @include mixins.button-hover(
-                rgba($color: $primary-black, $alpha: 90%),
-                $primary-white
-              );
+              $primary-black,
+              $primary-white,
+              16px
+            );
+            @include mixins.button-hover(
+              rgba($color: $primary-black, $alpha: 90%),
+              $primary-white
+            );
           }
 
           &--search-wrapper {

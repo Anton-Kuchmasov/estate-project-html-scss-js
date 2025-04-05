@@ -69,10 +69,6 @@
     color: $secondary-white-shadow;
     text-decoration: none;
 
-    &--black {
-        color: $primary-black;
-    }
-
     &:hover {
       color: rgba($color: $primary-white, $alpha: 100%);
     }
@@ -211,19 +207,6 @@
 
     @include mixins.on-tablet {
       margin-bottom: 64px;
-    }
-  }
-
-  &__image {
-    background: url("/public/images/photos/hero__image.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-    height: 250px;
-
-    @include mixins.on-tablet {
-      grid-column: 1 / -1;
-      height: 465px;
     }
   }
 }
