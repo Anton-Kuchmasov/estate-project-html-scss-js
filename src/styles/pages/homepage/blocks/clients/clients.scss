@@ -1,5 +1,5 @@
-@use "./../../utils/mixins.scss" as mixins;
-@use "./../../utils/vars.scss" as *;
+@use "./../../../../utils/mixins.scss" as mixins;
+@use "./../../../../utils/vars.scss" as *;
 
 .clients {
   @include mixins.page-padding;
@@ -10,8 +10,6 @@ max-width: 100vw;
   @include mixins.on-tablet {
     padding-block: 120px;
   }
-
-  // overflow-x: hidden !important;
 
   &__header {
     font-weight: 700;

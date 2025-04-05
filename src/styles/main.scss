@@ -1,14 +1,7 @@
 @use './utils/normalize.scss' as *;
 @use './utils/fonts.scss' as *;
 @use './utils/mixins.scss' as mixins;
-@use './blocks/header/header.scss' as *;
-@use './blocks/slider/slider.scss' as *;
-@use './blocks/main/main-section.scss' as *;
-@use './blocks/popular/popular.scss' as *;
-@use './blocks/clients/clients.scss' as *;
-@use './blocks/trusted/trusted.scss' as *;
-@use './blocks/footer/footer.scss' as *;
-@use './blocks/menu/menu.scss' as *;
+@use './pages/homepage/main.scss' as *;
 @use './pages/properties/main.scss' as *;
 @use './pages/contacts/main.scss' as *;
 
