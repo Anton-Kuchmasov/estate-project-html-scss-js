@@ -8,7 +8,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin-inline: -25px;
+
     @include mixins.page-padding;
+
     display: flex;
     flex-direction: column;
     gap: 100px;

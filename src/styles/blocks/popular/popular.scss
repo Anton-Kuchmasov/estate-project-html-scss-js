@@ -65,7 +65,7 @@
     @include mixins.on-tablet {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
-        gap: 40px 40px;
+        gap: 40px;
     }
 
 
