@@ -3,6 +3,7 @@
 
 .clients {
   @include mixins.page-padding;
+
 max-width: 100vw;
   padding-block: 80px;
 

@@ -1,0 +1,129 @@
+@use "./../../../../utils/mixins.scss" as mixins;
+@use "./../../../../utils/vars.scss" as *;
+
+.properties-hero {
+  background-color: $primary-white;
+
+  &.hero {
+    &__content {
+      text-align: center;
+      margin-bottom: 80px;
+      padding-top: 0;
+
+      & .hero {
+        &__text {
+          padding-inline: 120px;
+        }
+
+        &__header {
+          margin-bottom: 28px;
+        }
+
+        &__button {
+          margin: 0 auto;
+
+          &:hover {
+            background-color: $primary-black;
+          }
+        }
+
+        &__searchbar {
+          margin-top: 80px;
+          display: flex;
+          gap: 18px;
+
+          padding: 16px 32px;
+          background-color: $primary-gray;
+          border-radius: 12px;
+          
+
+          & * {
+            border-radius: 10px;
+            outline: none;
+          }
+
+          &--search {
+            display: flex;
+            min-height: 72px;
+            width: 100%;
+            position: relative;
+            border: none;
+            &[placeholder] {
+              padding-left: 40px;
+            }
+          }
+
+          &--sorting,
+          &--ordering {
+            position: relative;
+            min-width: 15%;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 10px;
+            align-items: center;
+            background-color: $primary-white;
+            &::after {
+              content: "";
+              position: absolute;
+              display: flex;
+              transform: translateY(-50%);
+              top: 50%;
+              right: 10px;
+              width: 12px;
+              height: 8px;
+              background-image: url(/public/images/icons/arrow-down.svg);
+            }
+          }
+
+          &--search-button {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+
+            @include mixins.primary-button(
+              $primary-white,
+              $primary-black,
+              16px
+            );
+            @include mixins.button-hover(
+              rgba($color: $primary-orange, $alpha: 90%),
+              $primary-black
+            );
+          }
+
+          &--reset {
+            @include mixins.primary-button(
+                $primary-black,
+                $primary-white,
+                16px
+              );
+              @include mixins.button-hover(
+                rgba($color: $primary-black, $alpha: 90%),
+                $primary-white
+              );
+          }
+
+          &--search-wrapper {
+            position: relative;
+            min-width: 40%;
+            display: flex;
+            justify-content: space-between;
+            &::before {
+              z-index: 3;
+              content: "";
+              position: absolute;
+              left: 4px;
+              top: 20px;
+              height: 35px;
+              width: 35px;
+              display: flex;
+              background: url("/public/images/icons/ci_location.svg");
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+}

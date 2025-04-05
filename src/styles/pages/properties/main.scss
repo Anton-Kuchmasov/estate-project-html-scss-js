@@ -1,0 +1,10 @@
+@use "./../../utils/mixins.scss" as mixins;
+@use "./../../utils/vars.scss" as *;
+
+@use './blocks/hero/hero.scss' as *;
+@use './blocks/header/header.scss' as *;
+@use './blocks/properties/properties.scss' as *;
+
+.main {
+    height: 100%;
+}

@@ -8,6 +8,8 @@
 @use './blocks/trusted/trusted.scss' as *;
 @use './blocks/footer/footer.scss' as *;
 @use './blocks/menu/menu.scss' as *;
+@use './pages/properties/main.scss' as *;
+@use './pages/contacts/main.scss' as *;
 
 .page-container > * {
     @include mixins.page-padding;

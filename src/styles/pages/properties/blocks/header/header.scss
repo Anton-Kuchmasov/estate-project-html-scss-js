@@ -1,0 +1,34 @@
+@use "./../../../../utils/mixins.scss" as mixins;
+@use "./../../../../utils/vars.scss" as *;
+
+.properties__header {
+  background: $primary-white;
+  color: $primary-black;
+  min-height: auto;
+
+  & .header__button {
+    background-color: $primary-black;
+    color: $primary-white;
+
+    &:hover {
+      background-color: $primary-orange;
+    }
+  }
+}
+
+
+.properties__nav .nav__link {
+  color: $primary-black;
+
+  &:hover {
+    color: $primary-orange;
+  }
+}
+
+.properties__nav {
+    & .nav__logo {
+    &--label {
+      color: $primary-black;
+    }
+  }
+}
