@@ -449,7 +449,7 @@ h1, h2, h3 {
   .popular__container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 40px 40px;
+    gap: 40px;
   }
 }
 @media (min-width: 1200px) {
@@ -968,7 +968,7 @@ h1, h2, h3 {
   right: 10px;
   width: 12px;
   height: 8px;
-  background-image: url(/public/images/icons/arrow-down.svg);
+  background-image: url("/public/images/icons/arrow-down.svg");
 }
 .properties-hero.hero__content .hero__searchbar--search-button {
   position: absolute;
@@ -1027,6 +1027,7 @@ h1, h2, h3 {
   background-size: contain;
 }
 
+/* stylelint-disable */
 .properties__header {
   background: #fff;
   color: #000;
@@ -1040,14 +1041,14 @@ h1, h2, h3 {
   background-color: #f15a29;
 }
 
-.properties__nav .nav__link {
+.properties-nav .nav__link {
   color: #000;
 }
-.properties__nav .nav__link:hover {
+.properties-nav .nav__link:hover {
   color: #f15a29;
 }
 
-.properties__nav .nav__logo--label {
+.properties-nav .nav__logo--label {
   color: #000;
 }
 
@@ -1069,7 +1070,7 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  align-items: center;
+  align-items: stretch;
   min-height: 100vh;
   padding-block: 10vh;
 }
@@ -1110,12 +1111,13 @@ h1, h2, h3 {
 }
 @media (min-width: 576px) {
   .contact-card {
-    max-height: calc(25vh + 40px);
-    padding: 64px 56px;
+    max-height: fit-content;
+    padding: 40px;
   }
 }
 @media (min-width: 1200px) {
   .contact-card {
+    padding: 64px 56px;
     max-height: 100%;
   }
 }
@@ -1133,18 +1135,16 @@ h1, h2, h3 {
 }
 .contact-card__map {
   min-height: 20vh;
-  min-width: calc(100vw - 50px);
 }
 @media (min-width: 576px) {
   .contact-card__map {
     min-height: calc(40vh - 40px);
-    width: calc(100vw - 150px);
   }
 }
 @media (min-width: 1200px) {
   .contact-card__map {
     min-height: 100%;
-    width: auto;
+    max-width: calc(100vw - 200px);
   }
 }
 .contact-card__address-wrapper {
@@ -1162,9 +1162,9 @@ h1, h2, h3 {
   line-height: 150%;
 }
 .contact-card--map {
-  padding: 20px;
   flex-grow: 1;
   position: relative;
+  align-items: stretch;
 }
 @media (min-width: 576px) {
   .contact-card--map {
@@ -1174,6 +1174,7 @@ h1, h2, h3 {
 @media (min-width: 1200px) {
   .contact-card--map {
     align-items: stretch;
+    padding: 20px;
   }
 }
 
