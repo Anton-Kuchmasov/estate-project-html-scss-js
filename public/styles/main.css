@@ -102,6 +102,9 @@ h1, h2, h3 {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
+.nav__link--black {
+  color: #000;
+}
 .nav__link:hover {
   color: white;
 }
@@ -1041,14 +1044,14 @@ h1, h2, h3 {
   background-color: #f15a29;
 }
 
-.properties-nav .nav__link {
+.properties__nav .nav__link {
   color: #000;
 }
-.properties-nav .nav__link:hover {
+.properties__nav .nav__link:hover {
   color: #f15a29;
 }
 
-.properties-nav .nav__logo--label {
+.properties__nav .nav__logo--label {
   color: #000;
 }
 
