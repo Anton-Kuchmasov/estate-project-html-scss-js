@@ -3,4 +3,41 @@
 
 .properties {
     margin-bottom: 35vh;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: start;
+        padding-inline: 12px;
+        max-width: calc(100% - 20px);
+        justify-content: stretch;
+    
+        @include mixins.on-tablet {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            align-content: center;
+            gap: 40px;
+        }
+
+        @include mixins.on-desktop {
+            grid-auto-columns: min-content;
+        }
+    
+    }
+
+    &__card {
+        grid-column: 1 / -1;
+    
+        @include mixins.on-tablet {
+            grid-column: span 5; 
+        }
+    
+        @include mixins.on-desktop {
+            grid-column: span 3; 
+            align-content: space-between;
+        }
+
+    }
+    
 }

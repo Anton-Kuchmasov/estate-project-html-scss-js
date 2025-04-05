@@ -113,7 +113,7 @@
     cursor: pointer;
 
     @include mixins.on-tablet {
-      max-width: calc(100% - 20px);
+      max-width: fit-content;
 
       &:hover {
         transform: scale(1.03);
@@ -143,15 +143,12 @@
   }
 
   &__description {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     margin-top: 16px;
     padding-bottom: 18px;
     border-bottom: 1px solid rgba($color: $secondary-text-black, $alpha: 30%);
-
-    @include mixins.on-tablet {
-      font-size: 24px;
-    }
+    text-wrap: nowrap;
   }
 
   &__props {

@@ -93,6 +93,13 @@
               rgba($color: $primary-orange, $alpha: 90%),
               $primary-black
             );
+
+                        
+            &[disabled] {
+                background-color: rgba($color: $primary-black, $alpha: 70%);
+                cursor: default;
+                pointer-events: none;
+              }
           }
 
           &--reset {
@@ -105,6 +112,12 @@
               rgba($color: $primary-black, $alpha: 90%),
               $primary-white
             );
+
+            &[disabled] {
+              background-color: rgba($color: $primary-white, $alpha: 90%);
+              color: lightgray;
+              cursor: default;
+            }
           }
 
           &--search-wrapper {

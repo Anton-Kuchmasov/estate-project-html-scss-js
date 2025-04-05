@@ -534,7 +534,7 @@ h1, h2, h3 {
 }
 @media (min-width: 576px) {
   .card__container {
-    max-width: calc(100% - 20px);
+    max-width: fit-content;
   }
   .card__container:hover {
     transform: scale(1.03);
@@ -1095,6 +1095,41 @@ h1, h2, h3 {
 
 .properties {
   margin-bottom: 35vh;
+}
+.properties__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: start;
+  padding-inline: 12px;
+  max-width: calc(100% - 20px);
+  justify-content: stretch;
+}
+@media (min-width: 576px) {
+  .properties__container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .properties__container {
+    grid-auto-columns: min-content;
+  }
+}
+.properties__card {
+  grid-column: 1/-1;
+}
+@media (min-width: 576px) {
+  .properties__card {
+    grid-column: span 5;
+  }
+}
+@media (min-width: 1200px) {
+  .properties__card {
+    grid-column: span 3;
+    align-content: space-between;
+  }
 }
 
 .main {
