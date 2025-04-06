@@ -84,8 +84,6 @@ h1, h2, h3 {
 }
 .nav__burger--black {
   background-image: url("/public/images/icons/burger-black.svg");
-  height: 30px;
-  width: 30px;
 }
 @media (min-width: 576px) {
   .nav__burger {
@@ -1207,12 +1205,12 @@ h1, h2, h3 {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.pagination button:hover:not(:disabled) {
-  background-color: #f0f0f0;
-}
 .pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+.pagination button:hover:not(:disabled) {
+  background-color: #f0f0f0;
 }
 .pagination button.active {
   background-color: #007bff;
