@@ -3,6 +3,8 @@
 @use './blocks/hero/hero.scss' as *;
 @use './blocks/header/header.scss' as *;
 @use './blocks/properties/properties.scss' as *;
+@use './blocks/loader/loader.scss' as *;
+@use './blocks/pagination/pagination.scss' as *;
 
 .main {
     height: 100%;

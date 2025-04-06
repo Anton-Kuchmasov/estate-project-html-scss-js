@@ -7,7 +7,6 @@
   &.hero {
     &__content {
       text-align: center;
-      margin-bottom: 80px;
       padding-top: 0;
 
       & .hero {
@@ -23,21 +22,21 @@
           margin-bottom: 28px;
         }
 
-        &__button {
-          margin: 0 auto;
-
-          &:hover {
-            background-color: $primary-black;
-          }
-        }
-
         &__searchbar {
+          position: relative;
           margin-top: 80px;
-          display: flex;
+          display: grid;
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 18px;
           padding: 16px 32px;
           background-color: $primary-gray;
           border-radius: 12px;
+
+          @include mixins.on-desktop {
+            display: flex;
+            gap: 18px;
+          }
 
           & * {
             border-radius: 10px;
@@ -47,7 +46,7 @@
           &--search {
             display: flex;
             min-height: 72px;
-            width: 100%;
+            min-width: 100%;
             position: relative;
             border: none;
 
@@ -58,56 +57,63 @@
 
           &--sorting,
           &--ordering {
-            position: relative;
-            min-width: 15%;
-            display: flex;
-            justify-content: flex-start;
+            min-width: 10%;
             padding-left: 10px;
-            align-items: center;
-            background-color: $primary-white;
-
-            &::after {
-              content: "";
-              position: absolute;
-              display: flex;
-              transform: translateY(-50%);
-              top: 50%;
-              right: 10px;
-              width: 12px;
-              height: 8px;
-              background-image: url("/public/images/icons/arrow-down.svg");
-            }
+            font-size: 16px;
+            outline: none;
+            border: none;
+            grid-row: 2;
           }
 
           &--search-button {
             position: absolute;
             right: 10px;
-            top: 5px;
+            top: 50%;
+            transform: translateY(-50%);
 
-            @include mixins.primary-button(
-              $primary-white,
-              $primary-black,
-              16px
-            );
+            @include mixins.primary-button($primary-white, $primary-black, 8px);
+
+            padding: 12px;
+
+            @include mixins.on-tablet {
+              @include mixins.primary-button(
+                $primary-white,
+                $primary-black,
+                12px
+              );
+
+              padding: 20px 16px;
+            }
+
             @include mixins.button-hover(
               rgba($color: $primary-orange, $alpha: 90%),
               $primary-black
             );
 
-                        
             &[disabled] {
-                background-color: rgba($color: $primary-black, $alpha: 70%);
-                cursor: default;
-                pointer-events: none;
-              }
+              background-color: rgba($color: $primary-black, $alpha: 70%);
+              cursor: default;
+              pointer-events: none;
+            }
           }
 
           &--reset {
+            grid-row: 2;
+
             @include mixins.primary-button(
               $primary-black,
               $primary-white,
               16px
             );
+
+            padding: 8px;
+            font-size: 12px;
+
+            @include mixins.on-tablet {
+                padding: 20px 16px;
+                font-size: 16px;
+            }
+
             @include mixins.button-hover(
               rgba($color: $primary-black, $alpha: 90%),
               $primary-white
@@ -125,6 +131,8 @@
             min-width: 40%;
             display: flex;
             justify-content: space-between;
+            grid-row: 1;
+            grid-column: 1 / -1;
 
             &::before {
               z-index: 3;

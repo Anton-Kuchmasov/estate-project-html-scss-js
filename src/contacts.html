@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="/src/scripts/utils/burger-menu.js" defer></script>
     <title>Contacts</title>
     <script>
       ((g) => {
@@ -71,16 +72,17 @@
           </a>
           <div class="properties__nav nav__bigscreen">
             <ul class="nav__list">
-              <li class="nav__item"><a href="./index.html" class="nav__link">Home</a></li>
-              <li class="nav__item"><a href="/" class="nav__link">About</a></li>
+              <li class="nav__item">
+                <a href="./index.html" class="nav__link">Home</a>
+              </li>
               <li class="nav__item">
                 <a href="./properties.html" class="nav__link">Properties</a>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">Contact</a>
+                <a href="#" class="nav__link">Contact</a>
               </li>
             </ul>
-            <a href="/">
+            <a href="./properties.html">
               <div class="properties__header header__button">
                 <div class="header__button--content">
                   <span>Get Started</span>
@@ -92,25 +94,27 @@
               </div>
             </a>
           </div>
-          <a class="nav__burger" href="./properties.html#menu">
-            <img src="/public/images/icons/burger-black.svg" alt="Menu" />
-          </a>
+          <button type="button" class="nav__burger nav__burger--black" id="burger-button">
+          </button>
         </nav>
         <aside class="header__menu menu" id="menu">
           <div class="menu__top">
             <a href="/" class="menu__top--logo">
               <span class="menu__top--label">EstatePro</span>
             </a>
-            <a href="./properties.html" class="menu__top--close"></a>
+            <button
+              type="button"
+              class="menu__top--close"
+              id="burger-close"
+            ></button>
           </div>
           <ul class="menu__list">
             <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
-            <li class="menu__item"><a href="/" class="menu__link">About</a></li>
             <li class="menu__item">
-              <a href="/" class="menu__link">Properties</a>
+              <a href="./properties.html" class="menu__link">Properties</a>
             </li>
             <li class="menu__item">
-              <a href="/" class="menu__link">Contact</a>
+              <a href="#" class="menu__link">Contact</a>
             </li>
           </ul>
         </aside>
@@ -161,8 +165,9 @@
               <div class="footer__nav--left">
                 <h3 class="footer__nav--header">Menu</h3>
                 <ul class="footer__nav--list">
-                  <li><a href="index.html" class="footer__nav--link">Home</a></li>
-                  <li><a href="/" class="footer__nav--link">About</a></li>
+                  <li>
+                    <a href="index.html" class="footer__nav--link">Home</a>
+                  </li>
                   <li>
                     <a href="./properties.html" class="footer__nav--link"
                       >Properties</a
@@ -192,15 +197,7 @@
                       >Twitter</a
                     >
                   </li>
-                  <li>
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="footer__nav--link"
-                      >Instagram</a
-                    >
-                  </li>
+
                   <li>
                     <a
                       href="https://linkedin.com"

@@ -3,7 +3,7 @@
 
 .menu {
     display: block;
-    z-index: 3;
+    z-index: 100;
 
     @include mixins.on-tablet {
         display: none;
@@ -16,6 +16,8 @@
 
     &--close {
       display: flex;
+      background: inherit;
+      border: 0;
       height: 30px;
       width: 30px;
       background-image: url("/public/images/icons/icon-close-2x.png");

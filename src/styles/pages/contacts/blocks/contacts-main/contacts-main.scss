@@ -45,10 +45,10 @@
   @include mixins.on-tablet {
     max-height: fit-content;
     padding: 40px;
-}
+  }
 
-@include mixins.on-desktop {
-      padding: 64px 56px;
+  @include mixins.on-desktop {
+    padding: 64px 56px;
     max-height: 100%;
   }
 
@@ -77,6 +77,12 @@
       min-height: 100%;
       max-width: calc(100vw - 200px);
     }
+  }
+
+  &__addresses {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   &__address-wrapper {
