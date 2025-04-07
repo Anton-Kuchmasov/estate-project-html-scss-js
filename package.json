@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html",
     "compile": "sass src/styles/main.scss public/styles/main.css",
     "lint:js": "eslint ./src/**/*/*.js --fix",
     "lint:scss": "npx stylelint \"**/*.scss\" --fix",
